@@ -55,12 +55,8 @@ router.route("/").get((req, res) => {
 		})
 });
 
-app.use("/", (req, res) => {
-	res.send("Welcome to the server");
-})
 app.use("/create", router);
 app.use("/getImages", router);
-
 
 const port = process.env.PORT || 8000;
 
