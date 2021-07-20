@@ -27,7 +27,6 @@ connection.once("open", () => {
 	console.log("MongoDB database connection established successfully");
 });
 
-
 router.route("/").post((req, res) => {
 	const imageUrl = req.body.canvasUrl;
 
@@ -63,6 +62,8 @@ app.use("/create", router);
 app.use("/getImages", router);
 
 
-app.listen(8000, () => {
+const port = process.env.PORT || 8000;
+
+app.listen(port, () => {
 	console.log(`Server is running at port no. : 8000`);
 });
