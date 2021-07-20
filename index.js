@@ -56,8 +56,12 @@ router.route("/").get((req, res) => {
 		})
 });
 
+app.use("/", (req, res) => {
+	res.send("Welcome to the server");
+})
 app.use("/create", router);
 app.use("/getImages", router);
+
 
 app.listen(8000, () => {
 	console.log(`Server is running at port no. : 8000`);
